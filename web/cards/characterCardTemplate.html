@@ -1,0 +1,93 @@
+<style>
+  .typeText {
+    font: normal 6px sans-serif;
+    fill: black;
+    stroke-width: 0.2;
+    stroke: black;
+  }
+
+  .rarityText {
+    font: normal 5px sans-serif;
+    fill: black;
+    stroke-width: 0.2;
+    stroke: black;
+  }
+
+  .nameText {
+    font: normal 5px sans-serif;
+    fill: black;
+    stroke-width: 0.2;
+    stroke: black;
+  }
+
+  .flavorText {
+    font: italic 4px sans-serif;
+    fill: darkred;
+    stroke-width: 0.1;
+    stroke: darkred;
+  }
+
+  .abilityBox {}
+</style>
+<div style="width:100px;height:130px;display:block;">
+  <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg id="cardSVG" x="0" y="0">
+      <g id="card" transform="translate(0 0)" fill="none" stroke-width="0.25">
+        <rect id="outerBorder" x="0" y="0" stroke="black" width="100%" height="100%" rx="3" style="fill:lightgrey" />
+
+        <defs>
+          <clipPath id="outerClip">
+            <use href="#outerBorder" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#outerClip)">
+          <text x="2" y="7" class="typeText">Character</text>
+          <text x="94" y="7" class="typeText" text-anchor="end">{{Rarity}}</text>
+          <rect id="charBorder" x="0" y="10" stroke="black" width="100" height="68" />
+
+          <g id="innerChar">
+            <defs>
+              <clipPath id="myClip">
+                <use href="#charBorder" />
+              </clipPath>
+            </defs>
+
+            <g clip-path="url(#myClip)">
+
+              <rect id="bgrect" x="0" y="0" stroke="black" width="100%" height="100" fill="lightblue"
+                stroke="lightblue" />
+              <rect id="bgrect" x="0" y="30" stroke="black" width="100%" height="100" fill="green" stroke="black" />
+              <circle id="bgc1" cx="163" cy="35" r="9" fill="lightgreen" stroke="darkgreen" stroke-width="0.25" />
+              <animate xlink:href="#bgc1" attributeName="cx" from="120" to="-10" dur="12s" fill="freeze"
+                repeatCount="indefinite" id="bgc1-anim" />
+              <circle id="bgc2" cx="183" cy="45" r="5.5" fill="lightgreen" stroke="darkgreen" stroke-width="0.25" />
+              <animate xlink:href="#bgc2" attributeName="cx" from="140" to="-10" dur="20s" fill="freeze"
+                repeatCount="indefinite" id="bgc2-anim" />
+              <circle id="bgc3" cx="173" cy="55" r="6" fill="lightgreen" stroke="darkgreen" stroke-width="0.25" />
+              <animate xlink:href="#bgc3" attributeName="cx" from="125" to="-10" dur="18s" fill="freeze"
+                repeatCount="indefinite" id="bgc3-anim" />
+              <circle id="bgc4" cx="193" cy="60" r="3.5" fill="lightgreen" stroke="darkgreen" stroke-width="0.25" />
+              <animate xlink:href="#bgc4" attributeName="cx" from="130" to="-10" dur="39s" fill="freeze"
+                repeatCount="indefinite" id="bgc4-anim" />
+
+              <circle id="char1" cx="50" cy="50" r="25.0" fill="yellow" stroke="darkgreen" stroke-width="0.25" />
+              <image href="./images/mouth/eyes_4.png" x="35" y="40" width="30" height="30"/>
+              <image href="./images/mouth/mouth_3.png" x="35" y="40" width="30" height="30"/>
+            </g>
+          </g>
+          <rect id="nameRect" stroke="black" x="0" y="78" width="100" height="12" style="opacity:0.5;fill:white;" />
+          <text x="2" y="86" class="nameText">{{CardName}}</text>
+          <rect id="flavorRect" stroke="black" x="0" y="90" width="100" height="12" style="opacity: 0.25;fill:white;" />
+          <text x="2" y="97" class="flavorText">{{FlavorText}}</text>
+
+          <rect id="abilityRect" stroke="black" x="0" y="102" width="100" height="28"
+            style="opacity: 0.75;fill:white;" />
+          <rect id="ability1" class="abilityBox" stroke="black" x="10" y="105" width="20" height="20" rx="2" />
+          <rect id="ability2" class="abilityBox" stroke="black" x="40" y="105" width="20" height="20" rx="2" />
+          <rect id="ability3" class="abilityBox" stroke="black" x="70" y="105" width="20" height="20" rx="2" />
+
+        </g>
+      </g>
+    </svg>
+  </svg>
+</div>
